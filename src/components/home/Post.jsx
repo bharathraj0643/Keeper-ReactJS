@@ -3,7 +3,7 @@ import useFetch from "../customHooks/useFetch";
 
 function Post() {
   const { id } = useParams();
-  const url = "http://localhost:3000/posts";
+  const url = "https://jsonplaceholder.typicode.com/posts";
   const [post, error] = useFetch(url + "/" + id);
 
   return (

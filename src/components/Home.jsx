@@ -1,4 +1,10 @@
-import { useState, createContext } from "react";
+import {
+  useState,
+  createContext,
+  useEffect,
+  useLayoutEffect,
+  useReducer,
+} from "react";
 import { Link } from "react-router-dom";
 import "./css/Home.css";
 
@@ -10,20 +16,28 @@ import Card from "./home/Card";
 import Footer from "./home/Footer";
 
 function Home() {
-  const url = "http://localhost:3000/posts";
+  const url = "https://jsonplaceholder.typicode.com/posts";
   const [posts, error] = useFetch(url);
 
   const [theme, setTheme] = useState(false);
-
+  
   function themeMode() {
     setTheme(!theme);
   }
+  // const [color, setColor] = useState("red");
+
+  // useLayoutEffect(()=>{
+  //   document.body.style.backgroundColor = color;
+  // },[color])
+
+  // function themeMode() {
+  //   setColor("black");
+  // }
 
   return (
     <>
       <div className="home" data-bs-theme={theme ? "dark" : "light"}>
         <dataContext.Provider value={{}}>
-          <button onClick={themeMode}>mode</button>
           <div className="container">
             <Link
               className="btn my-2"

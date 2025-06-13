@@ -8,8 +8,8 @@ function useFetch(url) {
     const controller = new AbortController();
     const signal = controller.signal;
 
-    setTimeout(() => {
-      fetch(url, { signal })
+    const  datafetch = async () => {
+      await fetch(url, { signal })
         .then((response) => {
           if (!response.ok) {
             throw Error(
@@ -26,7 +26,9 @@ function useFetch(url) {
           console.log(err);
           setError(err.message);
         });
-    }, 1000);
+    };
+
+    (async () => await datafetch())();
 
     return () => {
       console.log("Unmounted Home , API of posts");
