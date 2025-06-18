@@ -1,3 +1,3 @@
-#Keeper - A Note Taking built on ReactJS
+# Keeper - A Note Taking built on ReactJS
 
-Live Server - https://braj0643-keeper.netlify.app/ 
+Live Server - [👉 Click to view deployed website 🌐](keeper-react-js.vercel.app)
